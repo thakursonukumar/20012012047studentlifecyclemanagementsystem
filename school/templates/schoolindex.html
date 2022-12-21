@@ -1,0 +1,49 @@
+{% extends 'schoolbase.html' %}
+
+{% block body %}
+<!-- School Profile -->
+<div class="student-profile py-4" style="margin-top: 5%; margin-left: 27%">
+    <div class="container">
+      <div class="row">
+         
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>School Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">School Number</th>
+                  <td width="2%">:</td>
+                  <td>{{schooldetails.schoolnumber}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">School Name </th>
+                  <td width="2%">:</td>
+                  <td>{{schooldetails.schoolname}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">School Phone</th>
+                    <td width="2%">:</td>
+                    <td>{{schooldetails.schoolphone}}</td>
+                  </tr>
+                  <tr>
+                    <th width="30%">School Email</th>
+                    <td width="2%">:</td>
+                    <td>{{schooldetails.schoolemail}}</td>
+                  </tr>
+                <tr>
+                  <th width="30%">School Address</th>
+                  <td width="2%">:</td>
+                  <td>{{schooldetails.schooladdress}}</td>
+                </tr>
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

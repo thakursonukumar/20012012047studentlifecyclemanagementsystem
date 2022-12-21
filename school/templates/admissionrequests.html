@@ -1,0 +1,25 @@
+{% extends 'schoolbase.html' %}
+{% block body %}
+
+<table class="table table-striped mt-1" id="tables">
+    <input type="text"  class="form-control" style="margin-top: 5px;" name="" placeholder="search student request.." id="searchadhar" onkeyup="searchuser()" >
+    
+        <tr>
+            <th>Student ID</th>
+            <th>Class</th>
+            <th>Confirm</th>
+            <th>Decline</th>
+            
+        </tr>
+         {% for a in student %}
+            <tr>
+                <td>{{a.studentid}}</td>
+                <td>{{a.classname}}</td> 
+                
+                <td><a href="{% url 'admissionconfirm' a.studentid %}">Confirm</a> </td>
+                  <td><a href="{% url 'admissiondecline' a.studentid %}">Decline</a></td>
+    
+            </tr> 
+            {% endfor %}
+
+{% endblock %}

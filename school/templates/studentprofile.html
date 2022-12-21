@@ -1,0 +1,82 @@
+{% extends 'schoolbase.html' %}
+
+{% if messages %}     
+<script>
+  alert("wrong cridential!!")
+</script> 
+{% endif %}
+
+{% block body %}
+<!-- Student Profile -->
+<form action="" method="post">
+  {% csrf_token %}
+<input type="number"  class="form-control" style="margin-top: 5px;" name="id" placeholder="Enter Student Adhar.." id="searchadhar" onkeyup="searchuser()" >
+<input type="submit" class="form-control " style="margin-top: 3px; " value="search">
+</form>
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+       
+      <div class="col-lg-8 " style="margin-left: 15%;">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Profile Information</h3>
+          </div>
+          {% for student in studdetails %}
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Student Adhar</th>
+                <td width="2%">:</td>
+                <td>{{student.adhar}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Student Name </th>
+                <td width="2%">:</td>
+                <td>{{student.name}}</td>
+              </tr>
+              <tr>
+                  <th width="30%">Student Father Name</th>
+                  <td width="2%">:</td>
+                  <td>{{student.father}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Student Mother Name</th>
+                  <td width="2%">:</td>
+                  <td>{{student.mother}}</td>
+                </tr>
+              <tr>
+                <th width="30%">Student Gender</th>
+                <td width="2%">:</td>
+                <td>{{student.gender}}</td>
+              </tr>
+              <tr>
+                  <th width="30%">Student Phone</th>
+                  <td width="2%">:</td>
+                  <td>{{student.phone}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Student Email</th>
+                  <td width="2%">:</td>
+                  <td>{{student.email}}</td>
+                </tr>
+
+              <tr>
+                <th width="30%">Student Cast</th>
+                <td width="2%">:</td>
+                <td>{{student.cast}}</td>
+              </tr>
+              <tr>
+                  <th width="30%">Student Address</th>
+                  <td width="2%">:</td>
+                  <td>{{student.address}}</td>
+                </tr>
+            </table>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

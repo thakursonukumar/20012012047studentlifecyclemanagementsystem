@@ -1,0 +1,47 @@
+{% extends 'schoolbase.html' %}
+
+{% block body %}
+{% if messages %}
+<script>
+  alert("wrong cridential!!")
+</script> 
+{% endif %}
+<div class="container shadow-lg mt-4 p-3" >
+<form action="studentresultsuploadsave/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-floating mb-2">
+      <input type="number" class="form-control" id="" placeholder="Enter School number" name="studentid" required>
+      <label for="floatingInput">Student Adhar</label>
+    </div> 
+   
+    <div>
+      <select class="form-select mb-2" name="classname" id="" required>
+        <option value="">Select Class</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+
+    <div class="form-floating mb-2">
+        <input type="date" class="form-control" id="" placeholder="Enter School number" name="passingdate" required>
+        <label for="floatingInput">Passing Date</label>
+      </div> 
+
+      <div class="form-floating mb-2">
+        <input type="number"  class="form-control" id="" placeholder="Enter School number" name="percentage" required>
+        <label for="floatingInput">percentage</label>
+      </div> 
+
+    <button type="submit" class="form-control sub-btn btn-success fw-bold" >Upload</button>
+  </form>
+</div>
+</div>
+{% endblock %}
